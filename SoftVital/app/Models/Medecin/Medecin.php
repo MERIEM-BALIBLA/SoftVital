@@ -3,6 +3,7 @@
 namespace App\Models\Medecin;
 
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,6 +18,10 @@ class Medecin extends Model
 
     public function specialite(){
         return $this->belongsTo(Specialite::class);
+    }
+
+    public function user(){
+        return $this->belongsToMany(User::class);
     }
 
     

@@ -65,7 +65,21 @@ class User extends Authenticatable
         return $this->hasOne(Medecin::class);
     }
 
-    public function post(){
+<<<<<<< HEAD
+    public function posts()
+    {
         return $this->hasMany(Post::class);
     }
+
+    public function hasRole($role)
+    {
+        return $this->role()->where('role', $role)->exists();
+    }
+    
+
+=======
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
+>>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 }

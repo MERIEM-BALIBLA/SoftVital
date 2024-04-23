@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('cabinet');
             $table->text('adresse_cabinet');
             $table->string('image')->nullable();
+            $table->enum('statut', ['active', 'inactive'])->default('inactive');
             $table->timestamps();
         });
     }

@@ -2,6 +2,15 @@
 
 @section('content')
     <style>
+<<<<<<< HEAD
+        /*Start Animations*/
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0;
+            }
+
+=======
         @tailwind base;
         @tailwind components;
         @tailwind utilities;
@@ -13,6 +22,7 @@
                 opacity: 0;
             }
 
+>>>>>>> ab0b16a8d40deba901b275864c75f50097109340
             to {
                 top: 0;
                 opacity: 1;
@@ -57,8 +67,13 @@
 
         /*End Animations*/
         /*
+<<<<<<< HEAD
+                                                -- Start BackGround Animation
+                                                */
+=======
             -- Start BackGround Animation
             */
+>>>>>>> ab0b16a8d40deba901b275864c75f50097109340
         .area {
             /* background: #575edf; */
             /* dark:background-image:#575edf; */
@@ -177,10 +192,128 @@
             }
         }
 
+<<<<<<< HEAD
+
+        /* slider */
+        $bg-color: #222;
+        $margin: 20px;
+
+        body {
+            color: #333;
+            text-align: center;
+            background: $bg-color;
+            margin: 0;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 0;
+
+            h1 {
+                margin-bottom: 50px;
+            }
+        }
+
+        .wrapper {
+            position: relative;
+
+            // Gradient side fade
+
+            &:before,
+            &:after {
+                position: absolute;
+                top: 0;
+                z-index: 1;
+
+                content: "";
+                display: block;
+                width: $margin;
+                height: 100%;
+            }
+
+            &:before {
+                left: 0;
+                background: linear-gradient(90deg, $bg-color, transparent);
+            }
+
+            &:after {
+                right: 0;
+                background: linear-gradient(-90deg, $bg-color, transparent);
+            }
+        }
+
+        .items {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 0;
+            cursor: pointer;
+
+            &.active {
+                cursor: grab;
+            }
+        }
+
+        .item {
+            display: inline-block;
+            margin-left: $margin;
+            /* user-select: none; */
+
+            /* background: tomato; */
+            width: 50%;
+            /* height: 130px; */
+            /* color: $bg-color; */
+            font-size: 33px;
+            font-weight: bold;
+            line-height: 130px;
+
+            &:last-child {
+                margin-right: $margin;
+            }
+        }
+
+        @media screen and (min-width: 500px) {
+
+            .item {
+                width: 33%;
+            }
+        }
+
+        @media screen and (min-width: 800px) {
+
+            .item {
+                width: 25%;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .wrapper {
+                margin-left: -$margin;
+            }
+
+            .item {
+                width: 20%;
+            }
+        }
+    </style>
+=======
        
     </style>
     
-    <div class="relative w-full mb-4 rounded-b-2xl area bg-indigo-600 dark:bg-orange-500">
+>>>>>>> ab0b16a8d40deba901b275864c75f50097109340
+    <div class="relative w-full mb-4 rounded-b-2xl area bg-indigo-500 dark:bg-orange-500">
         <ul class="circles">
             <li></li>
             <li></li>
@@ -193,12 +326,177 @@
             <li></li>
             <li></li>
         </ul>
-        <div class=" py-60 px-10 rounded-b-2xl " {{-- style="opacity:3;" --}}>
-            <div class="text-center relative z-10 w-full">
-                <h2 class="text-2xl text-white font-medium title-font mb-16">Prenez rendez-vous avec votre médecin au cabinet
-                </h2>
+<<<<<<< HEAD
+        <div class="rounded-b-2xl pt-4 md:px-36 flex">
+            <div class="w-full md:w-1/2 text-start px-20 relative py-28 z-20">
+                <h2 class="text-4xl text-white font-bold title-font mb-4">Vous êtes professionnel de santé ?</h2>
+                <p class="text-xl text-gray-300">Comme des milliers de médecins, rejoignez la plateforme santé n°1 en
+                    Afrique.</p>
 
-                <div class="sm:w-2/3 my-auto mx-auto px-4">
+                <div class="mt-10">
+                    <a href="/Authentification" class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded">Je
+                        m'inscris</a>
+                </div>
+            </div>
+            <div class="w-1/2 md:block hidden">
+                <img class="w-full h-full" src="{{ asset('assets/images/docteur.png') }}" alt="">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container py-10 pt-10">
+        <div class="max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    SoftVital en chiffres
+                </h2>
+                <p class="mt-3 text-xl text-gray-500 sm:mt-4">
+                    Accédez à la plateforme santé n°1 en Afrique
+                </p>
+            </div>
+        </div>
+        <div class="mt-10 pb-1">
+            <div class="relative">
+                <div class="absolute inset-0 h-1/2 bg-gray-50"></div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl mx-auto">
+                        <dl class="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
+                            <div class="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
+                                <dt class="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
+                                    de patients
+                                </dt>
+                                <dd class="order-1 text-5xl font-extrabold text-gray-700">500+</dd>
+                            </div>
+                            <div
+                                class="flex flex-col border-t border-b border-gray-100 p-6 text-center sm:border-0 sm:border-l sm:border-r">
+                                <dt class="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
+                                    utilisateurs professionnels
+
+                                </dt>
+                                <dd class="order-1 text-5xl font-extrabold text-gray-700">58%</dd>
+                            </div>
+                            <div class="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
+                                <dt class="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
+                                    evenements
+                                </dt>
+                                <dd class="order-1 text-5xl font-extrabold text-gray-700">30+</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Slider --}}
+    <div class="px-4 w-full">
+        <div class="wrapper py-10">
+            <ul class="items">
+                @foreach ($medecins as $medecin)
+                    <li class="item">
+                        <div class="w-96 bg-base-100 border">
+                            <div class="w-full h-48"> <!-- Utilisation de h-48 pour une hauteur de 12rem -->
+                                @if ($medecin->image)
+                                    <img class="w-full h-full object-cover" src="{{ asset('storage/' . $medecin->image) }}"
+                                        alt="">
+                                @else
+                                    <div class="w-full h-full">
+                                        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="3em"
+                                            height="3em" viewBox="0 0 20 20">
+                                            <path fill="black"
+                                                d="M10 2a4 4 0 1 0 3.123 6.5H10v-1h3.71q.192-.474.26-1H10v-1h3.97a4 4 0 0 0-.26-1H10v-1h3.123A4 4 0 0 0 10 2m-4.991 9A2 2 0 0 0 3 13c0 1.691.833 2.966 2.135 3.797C6.417 17.614 8.145 18 10 18c1.694 0 3.282-.322 4.52-1H10v-1h5.836c.283-.3.522-.636.708-1.005H10v-1h6.896A4.7 4.7 0 0 0 17 13v-.005h-7v-1h6.73A2 2 0 0 0 15 11z" />
+                                        </svg>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="card-body">
+                                <h2 class="text-base font-medium">{{ $medecin->name }}</h2>
+                                <p class="text-sm font-light">{{ $medecin->email }}</p>
+                                <p class="text-sm font-light">{{ $medecin->telephone }}</p>
+                                <div class="pr-10">
+                                    <div class="">
+                                        <a href="/single_page/{{ $medecin->id }}"
+                                            class="inline-block text-center text-lg font-medium text-gray-100 bg-cyan-900 border-solid border-2 rounded-md border-cyan-800 py-1 px-10 hover:bg-cyan-800 hover:text-white hover:shadow-md md:w-48">Voir
+                                            le profil</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+
+    <div class="px-2 py-20 w-full flex justify-center">
+        <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
+            <div class="lg:w-1/2">
+                <div class="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg"
+                    style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97')">
+                </div>
+            </div>
+            <div class="py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 rounded-t-none border lg:rounded-lg">
+                {{-- <h2 class="text-3xl text-gray-800 font-bold">
+                    Pourquoi choisir SoftVital ?
+
+                    <span class="text-indigo-600">Choices</span>
+                </h2> --}}
+                <h2 class="text-xl text-cyan-950 font-medium uppercase lg:text-4xl">Pourquoi choisir SoftVital ?
+                </h2>
+                <p class="font-medium text-gray-900 text-2xl">
+                    Un cabinet plus visible, grâce à la présence puissante de DabaDoc sur le digital
+                </p>
+                <p class="mt-4 text-gray-600">
+                    Les patients peuvent vous trouver facilement grâce au référencement naturel sur les moteurs de
+                    recherche.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- https://gist.github.com/goodreds/3d044027175954984fb96c7407a955ab -->
+
+    <!-- Container -->
+    <div
+        class="container relative flex flex-col items-center mx-auto lg:flex-row-reverse lg:max-w-5xl lg:mt-12 xl:max-w-6xl mb-4">
+
+        <!-- Image Column -->
+        <div class="w-full h-64 lg:w-1/2 lg:h-auto">
+            <img class="h-full w-full object-cover" src="{{ asset('assets/images/index2.png') }}"
+                alt="Winding mountain road">
+        </div>
+        <!-- Close Image Column -->
+
+        <!-- Text Column -->
+        <div
+            class="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
+            <!-- Text Wrapper -->
+            <div class="flex flex-col p-12 md:px-16">
+                <h2 class="text-xl text-cyan-950 font-medium uppercase lg:text-4xl">Davantage de flux grâce à la prise de
+                    RDV 24/24
+                </h2>
+                <p class="mt-4 text-gray-600">
+                    Profitez d'un profil personnalisé qui regroupe toutes les informations concernant votre cabinet, ainsi
+                    que les créneaux horaires disponibles dans votre agenda.
+                </p>
+                <!-- Button Container -->
+                <div class="mt-8">
+                    <a href="#"
+                        class="inline-block w-full text-center text-lg font-medium text-gray-100 bg-cyan-900 border-solid border-2 border-cyan-800 py-4 px-10 hover:bg-cyan-800 hover:text-white hover:shadow-md md:w-48">Je
+                        m'inscris</a>
+=======
+        <div class=" py-40 px-10 rounded-b-2xl " {{-- style="opacity:3;" --}}>
+            <div class="text-start px-20 relative z-10 w-full">
+                {{-- <h2>Vous êtes professionnel de santé ?</h2> --}}
+                <h2 class="text-4xl text-black font-bold title-font mb-4">Vous êtes professionnel
+                    de santé ?
+                </h2>
+                <p class="text-xl text-gray-300">Comme des milliers de médecins, rejoignez la plateforme santé n°1 en Afrique.</p>
+
+                {{-- <div class="sm:w-2/3 my-auto mx-auto px-4">
                     <form class=" ">
                         <label for="default-search"
                             class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -225,14 +523,14 @@
                         </div>
                     </form>
 
-                </div>
+                </div> --}}
             </div>
         </div>
 
 
     </div>
 
-    <div class="md:absolute flex md:flex-row flex-col justify-center gap-8 md:top-2/4 md:left-0 md:right-0 mx-auto">
+    <div class="md:absolute flex md:flex-row flex-col justify-center gap-8 md:top-80 md:left-0 md:right-0 mx-auto">
 
         <div
             class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-sm sm:rounded-lg sm:px-10">
@@ -338,49 +636,43 @@
                         <button
                             class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
                     </div>
-                </div>
-                <div class="p-4 md:w-1/3 flex flex-col">
-                    <div
-                        class="ml-8 w-20 h-20 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" viewBox="0 0 24 24">
-                            <path fill="#5baefb"
-                                d="M20.13 4.155a5 5 0 0 0-4.39-1.07A6 6 0 0 0 12 5.665a6 6 0 0 0-3.72-2.58a5.09 5.09 0 0 0-4.4 1c-1.58 1.38-2.45 4.44-1.46 7.54c.112.342.246.676.4 1c.04.075.077.152.11.23c2.57 5.24 8.51 8 8.77 8.13a.672.672 0 0 0 .31.07a.702.702 0 0 0 .31-.07c.25-.11 6.25-2.85 8.8-8.15l.08-.17c.158-.34.295-.691.41-1.05c.94-3 .08-6.06-1.48-7.46m-.31 7.93c-.14.314-.3.618-.48.91h-3.31a1 1 0 0 1-.83-.45l-1.05-1.56l-2.23 4.46a1 1 0 0 1-.73.54h-.16a1 1 0 0 1-.71-.3l-2.71-2.7H4.7a10.595 10.595 0 0 1-.5-1a6.336 6.336 0 0 1-.38-1h4.21a.999.999 0 0 1 .71.29l2 2l2.38-4.76a1 1 0 0 1 .84-.55a1 1 0 0 1 .89.44l1.7 2.56h3.7a6.572 6.572 0 0 1-.43 1.12" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-
-                        <p class="leading-relaxed text-base">Gérez votre santé et celle de vos proches de façon sécurisée :
-                            compte, rendez-vous.</p>
-
-                    </div>
-                </div>
-                <div class="p-4 md:w-1/3 flex">
-                    <div
-                        class="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-6">
-                        <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Neptune</h2>
-                        <p class="leading-relaxed text-base">Prévenez l’apparition de maladies grâce à des messages de
-                            sensibilisation..</p>
-
-                    </div>
+>>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                 </div>
             </div>
+            <!-- Close Text Wrapper -->
         </div>
-    </section>
+        <!-- Close Text Column -->
+
+    </div>
+    <div class="px-2 py-20 w-full flex justify-center">
+        <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
+            <div class="lg:w-1/2">
+                <div class="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg"
+                    style="background-image:url('{{ asset('assets/images/index3.png') }}');background-position: center;
+                    background-size: cover">
+                </div>
+            </div>
+            <div class="py-12 px-6 lg:px-12 max-w-xl lg:max-w-5xl lg:w-1/2 rounded-t-none border lg:rounded-lg">
+                <h2 class="text-xl text-cyan-950 font-medium uppercase lg:text-4xl">Agenda intelligent
+                </h2>
+                <p class="mt-4 text-gray-600">
+                    SoftVital met à la disposition de votre cabinet un agenda intelligent qui synchronise les rendez-vous
+                    reçus à travers la plateforme, et les rendez-vous pris directement au cabinet.</p>
+
+            </div>
+        </div>
+    </div>
 
     <section class="px-6 sm:px-10 md:px-24 lg:px-40 py-10">
         <div class="rounded-xl"
             style="background-image: url('{{ asset('assets/images/bg.jpg') }}');background-position: center; background-size: cover;">
-            <div class="flex flex-col md:flex-row py-10 md:px-80 justify-between items-center sm:gap-10 bg-blue-500 bg-opacity-25 hover:bg-orange-400 hover:shadow-lg transition-colors duration-300"
+            <div class="relative flex flex-col md:flex-row py-10 md:px-60 justify-between items-center sm:gap-10 bg-blue-500 bg-opacity-25 hover:bg-orange-400 hover:shadow-lg transition-colors duration-300"
                 style="">
 
-                <h4 class="text-black font-bold text-3xl sm:text-4xl lg:text-5xl hover:text-white">SoftVital c'est...</h4>
+                {{-- <h4 class="text-black font-bold text-3xl sm:text-4xl lg:text-5xl hover:text-white">SoftVital c'est...</h4> --}}
+                <div class="">
+                    <h1 id="typewriter" class="text-4xl font-medium text-gray-700 "></h1>
+                </div>
                 <div class="flex flex-col md:flex-row md:gap-32 mt-6 sm:mt-0">
                     <div class="text-center">
                         <span class="font-medium text-2xl sm:text-3xl lg:text-4xl text-blue-500">80 millions</span>
@@ -403,54 +695,105 @@
     </section>
 
 
-    <section class="text-gray-600 body-font">
-        <div class="container mx-auto flex px-24 py-24 md:flex-row flex-col items-center">
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                <img class="w-5/6 object-cover object-center rounded" alt="hero"
-                    src="{{ asset('assets/images/Pic.png') }}">
-            </div>
-            <div
-                class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                <h3 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Vous êtes professionnel de santé
-                    ?</h3>
-                <p class="mb-8 leading-relaxed">Rejoignez SoftVital et gagnez sur tous les plans!</p>
-                <ul class="list-none mb-8">
-                    <li>&#9733; Un cabinet plus visible</li>
-                    <li>&#9733; Davantage de flux grâce à la prise de RDV 24/24</li>
-                    <li>&#9733; Des confirmations et rappels de RDV par SMS envoyés à tous vos patients</li>
-                </ul>
-                <div class="flex justify-center">
-                    <button
-                        class="inline-flex text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">En
-                        savoir plus</button>
 
+
+    <div class="slideshow-container w-full">
+        <div>
+            @foreach ($posts as $post)
+                <div class="mySlides1 w-10/12 mx-auto">
+                    <div class="flex">
+                        <div class="flex bg-gray-100 border p-4 rounded-lg">
+                            <div class="flex flex-col w-2/3 pr-4 bg">
+                                <p class="text-2xl font-medium mb-2 text-black">{{ $post->title }}</p>
+                                <p class="text-lg font-light leading-5 text-black"> {!! $post->description !!}</p>
+                                <p class="text-lg font-light leading-5 text-gray-700 mt-6">{{ $post->user->nom }}</p>
+                                <div class="flex h-full items-end text-gray-300 hover:text-gray-50">
+                                    <p class="flex gap-2 items-center ">
+                                        @if ($post->reactions_count === 0)
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
+                                                viewBox="0 0 48 48">
+                                                <path fill="#2f88ff" stroke="white" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="0.5"
+                                                    d="M15 8C8.92487 8 4 12.9249 4 19C4 30 17 40 24 42.3262C31 40 44 30 44 19C44 12.9249 39.0751 8 33 8C29.2797 8 25.9907 9.8469 24 12.6738C22.0093 9.8469 18.7203 8 15 8Z" />
+                                            </svg>
+                                        @else
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
+                                                viewBox="0 0 48 48">
+                                                <path fill="#2f88ff" stroke="white" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="0.5"
+                                                    d="M15 8C8.92487 8 4 12.9249 4 19C4 30 17 40 24 42.3262C31 40 44 30 44 19C44 12.9249 39.0751 8 33 8C29.2797 8 25.9907 9.8469 24 12.6738C22.0093 9.8469 18.7203 8 15 8Z" />
+                                            </svg> {{ $post->reactions_count }}
+                                        @endif
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="w-1/3">
+                                <img class="w-full hover:animate-bounce rounded-lg"
+                                    src="{{ asset('storage/' . $post->image) }}" alt="" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-    </section>
-    <section class="text-gray-600 body-font">
-        <div class="container mx-auto flex px-24 py-24 md:flex-row flex-col items-center">
-            <div
-                class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                <h3 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Bien dans sa tête, bien dans sa
-                    vie
-                </h3>
-                <p class="mb-8 leading-relaxed">Anxiété, souffrance au travail, troubles du sommeil, problèmes au sein du
-                    couple, inquiétudes pour son enfant…<br>Pour aller mieux, on a parfois besoin de parler à un
-                    professionnel</p>
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
 
-                <div class="flex justify-center">
-                    <button
-                        class="inline-flex text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">En
-                        savoir plus</button>
 
-                </div>
-            </div>
-            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                <img class="w-4/5 object-cover object-center rounded" alt="hero"
-                    src="{{ asset('assets/images/doc.png') }}">
-            </div>
 
+<<<<<<< HEAD
+    <script src="{{ asset('assets/js/slider.js') }}"></script>
+
+
+    {{-- slider --}}
+
+    <script>
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        const slider = document.querySelector('.items');
+
+        const end = () => {
+            isDown = false;
+            slider.classList.remove('active');
+        }
+
+        const start = (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        }
+
+        const move = (e) => {
+            if (!isDown) return;
+
+            e.preventDefault();
+            const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+            const dist = (x - startX);
+            slider.scrollLeft = scrollLeft - dist;
+        }
+
+        (() => {
+            slider.addEventListener('mousedown', start);
+            slider.addEventListener('touchstart', start);
+
+            slider.addEventListener('mousemove', move);
+            slider.addEventListener('touchmove', move);
+
+            slider.addEventListener('mouseleave', end);
+            slider.addEventListener('mouseup', end);
+            slider.addEventListener('touchend', end);
+        })();
+    </script>
+
+    <footer>
+        @include('layouts.footer')
+
+    </footer>
+=======
         </div>
     </section>
 
@@ -495,4 +838,39 @@
 
 
     <script src="{{ asset('assets/js/slider.js') }}"></script>
+
+    
+    
+    <script>
+    const words = ["SoftVital", "presente"]
+    let i = 0;
+    let j = 0;
+    let currentWord = "";
+    let isDeleting = false;
+    
+    function type() {
+      currentWord = words[i];
+      if (isDeleting) {
+        document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
+        j--;
+        if (j == 0) {
+          isDeleting = false;
+          i++;
+          if (i == words.length) {
+            i = 0;
+          }
+        }
+      } else {
+        document.getElementById("typewriter").textContent = currentWord.substring(0, j+1);
+        j++;
+        if (j == currentWord.length) {
+          isDeleting = true;
+        }
+      }
+      setTimeout(type, 300);
+    }
+    
+    type();
+    </script>
+>>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 @endsection

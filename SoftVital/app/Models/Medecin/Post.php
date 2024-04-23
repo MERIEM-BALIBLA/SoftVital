@@ -15,4 +15,24 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+<<<<<<< HEAD
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function reactions()
+    {
+        return $this->hasMany(Reaction::class);
+    }
+
+    public function userHasReacted()
+    {
+        // Vérifie si l'utilisateur actuel a déjà réagi au post
+        return $this->reactions()->where('user_id', auth()->id())->exists();
+    }
+
+=======
+>>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 }

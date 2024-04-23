@@ -37,53 +37,17 @@ class AuthController extends Controller
     // start register
     public function register(RegisterRequest $request)
     {
-        // $validatedData = $request->validated();
-
-        // // Fetch the role ID based on the role selected in the form
-        // $role = Role::where('role', $validatedData['role'])->first();
-
-        // // Set the role_id to the fetched role's ID
-        // $validatedData['role_id'] = $role->id;
-
-        // // Récupérer l'ID de la ville à partir des données utilisateur
-        // $villeId = $validatedData['ville'];
-
-        // // Ajouter l'ID de la ville au tableau $validatedData
-        // $validatedData['ville_id'] = $villeId;
-
-        // try {
-        //     // Créer l'utilisateur avec le rôle spécifié
-        //     $user = $this->userRepository->createUser($validatedData);
-
-        //     // Attacher le rôle à l'utilisateur
-        //     $user->role()->attach($role->id);
-
-        //     // Si le rôle est "médecin", valider les données spécifiques au médecin
-        //     if ($role->role === 'medecin') {
-        //         $specialite = $request->input('specialite');
-        //         $medecinData = [
-        //             'user_id' => $user->id,
-        //             'specialite_id' => $specialite,
-        //             'cabinet' => $request->input('cabinet'),
-        //             'adresse_cabinet' => $request->input('adresse_cabinet'),
-        //         ];
-        //         $this->userRepository->createMedecin($medecinData);
-
-        //     }
-
-        //     auth()->login($user);
-
-        //     return redirect()->route('/');
-        // } catch (\PDOException $e) {
-        //     if ($e->getCode() === '23000' && strpos($e->getMessage(), 'Duplicate entry') !== false) {
-        //         return redirect('Authentification')->with("error", "L'adresse e-mail que vous avez entrée est déjà associée à un compte. Veuillez utiliser une autre adresse e-mail.");
-        //     } else {
-        //         return redirect('Authentification')->with("error", "Une erreur s'est produite lors de la création de votre compte. Veuillez réessayer plus tard.");
-        //     }
-        // }
         $this->userRepository->createUser($request);
-        // return redirect('/');
+        
+        // Vérifie si le champ 'role' dans la demande a la valeur 'medecin'
+        if ($request->role === 'medecin') {
+            return redirect()->back()->with('success', 'Le compte a été créé avec succès. Vous êtes maintenant enregistré en tant que médecin.');
+        } else {
+            return redirect('/');
+        }
     }
+    
+    
     // end register
 
     // start logout
@@ -97,6 +61,7 @@ class AuthController extends Controller
     // start login
     public function login(Request $request)
     {
+        // if($request->hasRole('mdecin'))
         return $this->userRepository->login($request);
     }
     // end login

@@ -18,6 +18,11 @@ class ProfileRepository implements ProfileInterfaceRepository
         $user->nom = $data['nom'] ?? $user->nom;
         $user->email = $data['email'] ?? $user->email;
         $user->numero = $data['numero'] ?? $user->numero;
+<<<<<<< HEAD
+        $user->ville_id = $data['ville'] ?? $user->ville_id; // Utilisez "ville_id" au lieu de "ville"
+
+=======
+>>>>>>> ab0b16a8d40deba901b275864c75f50097109340
         return $user->save();
     }
 

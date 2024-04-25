@@ -16,7 +16,10 @@ class CalandrierRepository implements CalandrierInterfaceRepository
         $user = Auth::user();
         return Event::where('user_id', $user->id)
             ->where('type', 'evenement')
-            ->get();
+        ->get();
+        // return Event::where('user_id', $user->id)
+        //     ->where('type', 'evenement')
+        //     ->paginate(8);
     }
 
     public function getHoraire()
@@ -68,25 +71,22 @@ class CalandrierRepository implements CalandrierInterfaceRepository
         // public function createEvent(Request $request){
         $user = auth()->user();
 
-<<<<<<< HEAD
-        $validatedData = $request->validate([
-            'title' => 'required|max:30|min:5',
-        ],
-        [
-            // 'title.required' => 'Le titre est requis.',
-            'title.min' => 'Le titre doit contient au minimun 5 caractères.',
+        $validatedData = $request->validate(
+            [
+                'title' => 'required|max:30|min:5',
+            ],
+            [
+                // 'title.required' => 'Le titre est requis.',
+                'title.min' => 'Le titre doit contient au minimun 5 caractères.',
 
-            'title.max' => 'Le titre ne peut pas dépasser 30 caractères.',
-            // Autres messages d'erreur personnalisés ici
-        ]
-    );
+                'title.max' => 'Le titre ne peut pas dépasser 30 caractères.',
+                // Autres messages d'erreur personnalisés ici
+            ]
+        );
 
         // $title = $request->input("title");
         $title = $validatedData['title'];
 
-=======
-        $title = $request->input("title");
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
         $range = $request->input("rangepick");
         $type = $request->input("type");
         $division = $request->input("division");
@@ -95,7 +95,6 @@ class CalandrierRepository implements CalandrierInterfaceRepository
         $dates = explode(' - ', $range);
         $start_datetime = Carbon::parse($dates[0]);
         $end_datetime = Carbon::parse($dates[1]);
-<<<<<<< HEAD
         if ($start_datetime->isToday() || $start_datetime->isFuture()) {
             if ($division) {
                 // Diviser la durée de l'événement en tranches plus petites en utilisant la fonction divideTime
@@ -178,36 +177,4 @@ class CalandrierRepository implements CalandrierInterfaceRepository
         $event->end = $end_datetime;
         $event->save();
     }
-=======
-        if ($division) {
-            // Diviser la durée de l'événement en tranches plus petites en utilisant la fonction divideTime
-            $durationInHours = $start_datetime->diffInHours($end_datetime);
-            $dividedTime = $this->divideTime($durationInHours, $division);
-        } else {
-            // Si aucune division n'a été sélectionnée, traiter l'événement comme une unité
-            $dividedTime = [$start_datetime->diffInMinutes($end_datetime)];
-        }
-        // Enregistrer chaque tranche de temps comme un événement séparé
-        $events = [];
-        $currentDateTime = $start_datetime;
-        foreach ($dividedTime as $time) {
-            $event = new Event();
-            $event->title = $title;
-            $event->start = $currentDateTime;
-            $currentDateTime = $currentDateTime->copy()->addMinutes($time); // Ajouter la durée de la tranche
-            $event->end = $currentDateTime;
-            $event->type = $type;
-            $event->user_id = $user->id; // Définir la valeur de 'user_id'
-
-            $event->save();
-            $events[] = $event;
-        }
-    }
-
-    public function destroyEvent(Request $request, $id){
-        Event::destroy($id);
-
-    }
-
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 }

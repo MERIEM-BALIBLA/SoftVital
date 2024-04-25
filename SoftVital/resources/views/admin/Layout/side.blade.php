@@ -39,18 +39,18 @@
                 <div href="#"
                     class="flex items-center pl-2 space-x-2 rounded-md hover:bg-gray-100 hover:text-blue-500">
                     <span>
-                        <details class="group">
-                            <summary :class="{ 'lg:hidden': !isSidebarOpen }"
+                        <details class="group" :class="{ 'lg:hidden': !isSidebarOpen }">
+                            <summary
                                 class="flex items-center justify-between gap-2 py-2 font-medium marker:content-none hover:cursor-pointer">
                                 <svg class="hover:fill-blue-500" xmlns="http://www.w3.org/2000/svg" width="2em"
                                     height="2em" viewBox="0 0 16 16">
                                     <path fill="black" d="M8 4H3v3h5zm5 5H8v3h5zm-3-5h3v3h-3zM6 9H3v3h3z" />
                                 </svg>
-                                <span class="flex gap-2">
-                                    <a href="dashboard">
+                                <a href="dashboard" :class="{ 'justify-center': !isSidebarOpen }">
+                                    <span class="flex gap-2">
                                         Liste des comptes
-                                    </a>
-                                </span>
+                                    </span>
+                                </a>
                                 <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     viewBox="0 0 16 16">
@@ -88,8 +88,8 @@
                 </div>
             </li>
             <li>
-<<<<<<< HEAD
-                <a href="{{ route('liste_des_specialites') }}" class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
+                <a href="{{ route('liste_des_specialites') }}"
+                    class="flex items-center p-2 space-x-2 rounded-md hover:bg-gray-100"
                     :class="{ 'justify-center': !isSidebarOpen }">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
@@ -103,79 +103,23 @@
                     </span>
                     <span :class="{ 'lg:hidden': !isSidebarOpen }">Liste des spécialités</span>
                 </a>
-=======
-                <div href="#"
-                    class="flex items-center pl-2 space-x-2 rounded-md hover:bg-gray-100 hover:text-blue-500">
-                    <span>
-                        <details class="group">
-                            <summary :class="{ 'lg:hidden': !isSidebarOpen }"
-                                class="flex items-center justify-between gap-2 py-2 font-medium marker:content-none hover:cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
-                                    viewBox="0 0 24 24">
-                                    <g fill="none" stroke="black" stroke-width="1.2">
-                                        <path
-                                            d="M2.906 17.505L5.337 3.718a2 2 0 0 1 2.317-1.623L19.472 4.18a2 2 0 0 1 1.622 2.317l-2.431 13.787a2 2 0 0 1-2.317 1.623L4.528 19.822a2 2 0 0 1-1.622-2.317Z" />
-                                        <path stroke-linecap="round"
-                                            d="m8.929 6.382l7.879 1.389m-8.574 2.55l7.879 1.39M7.54 14.26l4.924.869" />
-                                    </g>
-                                </svg>
-                                <span class="flex gap-2">
-                                    <span>
-                                        Liste des postes
-                                    </span>
-                                </span>
-                                <svg class="w-5 h-5 text-gray-500 transition group-open:rotate-90"
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
-                                    </path>
-                                </svg>
-                            </summary>
-                            <article class="pb-4">
-                                <ul class="flex flex-col gap-4 mt-4 px-4">
-                                    <li class="flex gap-2 items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
-                                            viewBox="0 0 24 24">
-                                            <path fill="black"
-                                                d="M5 19V5h7v7h7v1c.7 0 1.37.13 2 .35V9l-6-6H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h8.35c-.22-.63-.35-1.3-.35-2zm9-14.5l5.5 5.5H14zm8.5 12.75L17.75 22L15 19l1.16-1.16l1.59 1.59l3.59-3.59z" />
-                                        </svg>
-                                        <a href="">
-                                            Poste publié
-                                        </a>
-                                    </li>
-                                    <li class="flex gap-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
-                                            viewBox="0 0 24 24">
-                                            <path fill="black"
-                                                d="M23 18v2h-8v-2zm-10 1c0 .7.13 1.37.35 2H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h10l6 6v4.35c-.63-.22-1.3-.35-2-.35v-1h-7V5H5v14zm1-9h5.5L14 4.5z" />
-                                        </svg>
-                                        <a href="">
-                                            Postes non publié
-                                        </a>
-                                    </li>
-                                </ul>
-                            </article>
-                        </details>
-                    </span>
-                </div>
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
             </li>
-            <!-- Sidebar Links... -->
         </ul>
     </nav>
     <!-- Sidebar footer -->
-    <div class="flex-shrink-0 p-2 border-t max-h-14">
-        <button
-            class="flex items-center justify-center w-full px-4 py-2 space-x-1 font-medium tracking-wider uppercase bg-gray-100 border rounded-md focus:outline-none focus:ring">
-            <span>
-                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                </svg>
-            </span>
-            <span :class="{ 'lg:hidden': !isSidebarOpen }"> Logout </span>
-        </button>
-    </div>
+    <a href="{{ route('logout') }}">
+        <div class="flex-shrink-0 p-2 border-t max-h-14">
+            <button
+                class="flex items-center justify-center w-full px-4 py-2 space-x-1 font-medium tracking-wider uppercase bg-gray-100 border rounded-md focus:outline-none focus:ring">
+                <span>
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                </span>
+                <span :class="{ 'lg:hidden': !isSidebarOpen }"> Se deconnecter </span>
+            </button>
+        </div>
+    </a>
 </aside>

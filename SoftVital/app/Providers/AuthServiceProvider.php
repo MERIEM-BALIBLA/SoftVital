@@ -5,10 +5,7 @@ namespace App\Providers;
 // use Illuminate\Support\Facades\Gate;
 use App\Models\medecin\Post;
 use App\Models\User;
-<<<<<<< HEAD
 use App\Policies\PostPolicy;
-=======
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -31,7 +28,6 @@ class AuthServiceProvider extends ServiceProvider
         //
         $this->registerPolicies();
 
-<<<<<<< HEAD
         // Gate::define('modifier-poste', function (User $user,Post $post) {
         //     return $user->id === $post->user_id;
         // });
@@ -39,14 +35,5 @@ class AuthServiceProvider extends ServiceProvider
         // Gate::define('suprimer-poste', function (User $user,Post $post) {
         //     return $user->id === $post->user_id;
         // });   
-=======
-        Gate::define('modifier-poste', function (User $user,Post $post) {
-            return $user->id === $post->user_id;
-        });
-
-        Gate::define('suprimer-poste', function (User $user,Post $post) {
-            return $user->id === $post->user_id;
-        });
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medecin extends Model
 {
-    use HasFactory;
+
     protected $fillable = ['user_id','specialite_id','cabinet','adresse_cabinet','ville_id','image'];
 
     public function role(){
@@ -21,9 +21,6 @@ class Medecin extends Model
     }
 
     public function user(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
-
-    
-    
 }

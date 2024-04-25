@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\medecin\dashboard;
+namespace App\Http\Controllers\medecin\profil;
 
 use App\Http\Controllers\Controller;
 use App\Models\medecin\Post;

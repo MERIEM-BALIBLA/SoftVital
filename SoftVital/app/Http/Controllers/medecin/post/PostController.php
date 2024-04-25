@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\medecin\dashboard;
+namespace App\Http\Controllers\medecin\post;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
@@ -67,7 +67,7 @@ class PostController extends Controller
     public function update(PostRequest $postRequest, $id)
     {
         $this->postRepository->updatePost($postRequest, $id);
-        return redirect()->route('dashboard_medecin')->with('seccess', 'Votre poste a bien enregistre');
+        return redirect()->route('dash.profile')->with('seccess', 'Votre poste a bien enregistre');
     }
 
 

@@ -1,29 +1,13 @@
 @include('layouts.head')
 
-<<<<<<< HEAD
-<body class="relative flex flex-col h-screen dark:bg-gray-800 bg-gray-50">
+<body class="relative flex flex-col dark:bg-gray-800 bg-gray-50">
     <nav 
     {{-- class="sticky top-0 left-0 right-0" --}}
     >
-=======
-    </body>
-<body class="relative flex flex-col h-screen dark:bg-gray-800 bg-gray-200">
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50">
-
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
         @include('layouts.navebarre')
     </nav>
     
     @yield('content')
-<<<<<<< HEAD
-=======
-    {{-- <footer>
-        @include('layouts.footer')
-    </footer> --}}
-
-
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 
    
    

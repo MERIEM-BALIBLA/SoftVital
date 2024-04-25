@@ -12,14 +12,9 @@ interface CalandrierInterfaceRepository
     public function getHoraire();
     public function divideTime($totalHours, $division);
     public function createEvent(Request $request);
-<<<<<<< HEAD
     public function destroyEvent($id);
     public function updateEvent(Request $request, $id);
     public function getEventJson(Request $request);
     public function handleEvent(Request $request);
     public function EdithandleEvent(Request $request);
-=======
-    public function destroyEvent(Request $request, $id);
-
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 }

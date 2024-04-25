@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<footer class="relative  pt-8 pb-6 bg-indigo-600 text-white mt-10">
+<footer class="relative  pt-8 pb-6 bg-indigo-600 text-white">
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap text-left lg:text-left">
       <div class="w-full lg:w-6/12 px-4">
@@ -31,13 +30,6 @@
               
             <span class="text-6xl font-semibold text-orange-500">Vital</span>
           </div>
-=======
-<footer class="relative bg-blueGray-200 pt-8 pb-6">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-wrap text-left lg:text-left">
-      <div class="w-full lg:w-6/12 px-4">
-        <h4 class="text-3xl fonat-semibold text-blueGray-700">Let's keep in touch!</h4>
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
         <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
           Find us on any of these platforms, we respond 1-2 business days.
         </h5>
@@ -45,7 +37,6 @@
       <div class="w-full lg:w-6/12 px-4">
         <div class="flex flex-wrap items-top mb-6">
           <div class="w-full lg:w-4/12 px-4 ml-auto">
-<<<<<<< HEAD
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Contater-nous</span>
             <ul class="list-unstyled">
               <li>
@@ -67,25 +58,6 @@
             </ul>
           </div>
           {{-- <div class="w-full lg:w-4/12 px-4">
-=======
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
-              </li>
-            </ul>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
             <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Other Resources</span>
             <ul class="list-unstyled">
               <li>
@@ -101,11 +73,7 @@
                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
               </li>
             </ul>
-<<<<<<< HEAD
           </div> --}}
-=======
-          </div>
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
         </div>
       </div>
     </div>
@@ -119,9 +87,6 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
 
 
-=======
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 </footer>

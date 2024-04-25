@@ -8,17 +8,10 @@
     <!-- component -->
     {{-- <div class=" flex justify-center lg:h-screen"> --}}
     {{-- <div class="container mx-auto p-4"> --}}
-<<<<<<< HEAD
     <div class="container flex flex-col sm:flex-row gap-8 mt-24">
 
         @foreach ($posts as $post)
             <div class="relative bg-white md:w-1/3 w-full border shadow-md rounded-lg overflow-hidden">
-=======
-    <div class="flex flex-col sm:flex-row gap-8 mt-24">
-
-        @foreach ($posts as $post)
-            <div class="relative bg-white md:w-1/3 w-full shadow rounded-lg overflow-hidden">
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                 <img src="{{ asset('storage/' . $post->image) }}" class="object-cover h-52 w-full" alt="">
                 <div class="p-6">
                     <span class="block text-slate-400 font-semibold text-sm">{{ $post->created_at->format('Y-m-d') }}</span>
@@ -34,11 +27,7 @@
                                     d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                             </svg>
 
-<<<<<<< HEAD
                             {{ $post->count }}
-=======
-                            20
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                         </span>
                         <span class="flex gap-1 items-center text-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -89,24 +78,9 @@
         <div class="bg-white md:w-1/3 w-fullshadow rounded-lg">
 
             <a href="{{ route('create') }}" class="">
-<<<<<<< HEAD
                 <button class="bg-cyan-800 text-gray-200 hover:bg-cyan-700 hover:text-white p-4 rounded-md text-base">
                     Ajouter un nouveau poste
                 </button>
-=======
-                <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 24 24">
-                    <g fill="none" stroke="#dcdbdb" stroke-dasharray="18" stroke-dashoffset="18" stroke-linecap="round"
-                        stroke-width="2.6">
-                        <path d="M12 5V19">
-                            <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.3s"
-                                values="18;0" />
-                        </path>
-                        <path d="M5 12H19">
-                            <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="18;0" />
-                        </path>
-                    </g>
-                </svg>
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
             </a>
         </div>
 

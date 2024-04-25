@@ -4,31 +4,23 @@ use App\Http\Controllers\admin\compteController;
 use App\Http\Controllers\Authentification\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\medecin\calandrier\EventController;
-use App\Http\Controllers\medecin\calandrier\ListeController;
-use App\Http\Controllers\medecin\dashboard\PostController;
-use App\Http\Controllers\medecin\dashboard\ProfileController;
-<<<<<<< HEAD
+// use App\Http\Controllers\medecin\calandrier\ListeController;
+use App\Http\Controllers\medecin\post\PostController;
+use App\Http\Controllers\medecin\profil\ProfileController;
 use App\Http\Controllers\medecin\MedecinController;
 use App\Http\Controllers\medecin\reservation\ReservationController;
 use App\Http\Controllers\medecin\singlePage\SinglePageController;
 use App\Http\Controllers\admin\specialite\SpecialiteController;
 use App\Http\Controllers\reaction\ReactionController;
-=======
-use App\Http\Controllers\medecin\reservation\ReservationController;
-use App\Http\Controllers\medecin\singlePage\SinglePageController;
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 use App\Http\Controllers\ReserveController;
+use App\Models\RendezVous;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('/', HomeController::class)->names([
     'index' => '/'
 ]);
 
-<<<<<<< HEAD
 Route::resource('/Authentification', AuthController::class);
-=======
-Route::resource('/Authentification',AuthController::class);
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -66,7 +58,6 @@ Route::resource('post', PostController::class)->names([
     'edit' => 'edit',
     'update' => 'update',
     'destroy' => 'destroy',
-<<<<<<< HEAD
 ])->middleware(['auth', 'medecin']);
 
 // reaction
@@ -84,16 +75,6 @@ Route::delete('/supprimer_mon_compte', [compteController::class, 'delete'])->nam
 Route::put('/modifier_profil', [ProfileController::class, 'uploadProfileImage'])->name('Modifier_profil')->middleware(['auth', 'medecin']);
 Route::put('/supprimer_photo_de_profil', [ProfileController::class, 'deleteProfileImage'])->name('supprimer_photo_profil')->middleware(['auth', 'medecin']);
 
-=======
-]);
-
-// profil--------------------------------------------
-Route::get('/dashboard/profile', [ProfileController::class, 'index'])->name('dash.profile');
-Route::put('/modifier_mes_informations_personnelles', [ProfileController::class, 'update_InfoPersonnelle'])->name('update_InfoPersonnelle');
-Route::put('/modifier_mes_informations_professionnel', [ProfileController::class, 'update_Proffesionnel'])->name('updateProffesionInfo');
-// Route::match(['put', 'post'], '/modifier_image', [ProfileController::class, 'uploadProfileImage'])->name('uploadProfileImage');
-Route::put('/modifier_ma_photo_de_profile', [ProfileController::class, 'uploadProfileImage'])->name('uploadProfileImage');
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 // --------------------------------------------------
 
 // single page---------------------------------------
@@ -103,7 +84,6 @@ Route::post('/faire un rendze-vous', [SinglePageController::class, 'reserve'])->
 // --------------------------------------------------
 
 // calandrier 
-<<<<<<< HEAD
 // Route::get('getevents', [EventController::class, 'getevents'])->name('getevents')->middleware(['auth'])->middleware(['auth', 'medecin']);
 Route::get('getevents', [EventController::class, 'getevents'])
     ->name('getevents')
@@ -145,51 +125,36 @@ Route::resource('/specialite', SpecialiteController::class)->names([
     'update' => 'modifier_une_specialite',
     'destroy' => 'suprimer_une_specialite'
 ])->middleware(['auth', 'admin']);
-=======
-Route::get('getevents', [EventController::class, 'getevents'])->name('getevents');
-Route::post('/calendar/mycalendar/editevent', [EventController::class, 'updateevent'])->name('mycalendar.editevent');
-
-Route::resource('event', EventController::class)->names([
-    'index' =>'calandrier',
-    // 'create' => 'mycalendar.addevent',
-    'destroy' => 'event.destroy',
-    'update' => 'event.update'
-]);
-Route::post('event', [EventController::class, 'create'])->name('mycalendar.addevent');
-// afficher infor
-Route::post('event_id', [EventController::class, 'handleEvent'])->name('event_id');
-
-// edit avec popup
-Route::put('event-edit', [EventController::class, 'updateevent'])->name('mycalender.updateevent');
-
-// edit avec translation
-Route::put('event-edit-translate', [EventController::class, 'translateUpdate'])->name('translateevent');
-
-// admin----------------------------------------------
-Route::get('/dashboard', [compteController::class, 'index']);
-Route::get('/liste_des_rendez-vous', [ListeController::class, 'index']);
-Route::put('/medecin/{id}/edit', [compteController::class, 'edit'])->name('medecin.edit');
-// compte active 
-Route::get('/liste_des_comptes_actives', [compteController::class, 'compteActive']);
-// compte inactive
-Route::get('/liste_des_comptes_inactives', [compteController::class, 'compteInactive']);
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 
 
 // ---------------------------------------------------
+
+
+// patient liste des rendez-vous
+Route::get('liste_de_mes_rendez-vous', function(){
+    $user = Auth::user();
+    $reservations = RendezVous::where('rendez-vous.user_id', $user->id)
+    ->leftJoin('events','rendez-vous.event_id', '=', 'events.id')
+    ->leftJoin('medecins','rendez-vous.medecin_id', '=', 'medecins.id')
+    ->leftJoin('users', 'medecins.user_id', '=', 'users.id')
+    ->select('users.nom as medecin_nom', 'events.start as debut', 'events.end as fin', 'rendez-vous.reservation as statut')
+    ->get();
+    return view('patient/index', compact('reservations'));
+});
+
+// --------------------------------------------------
+
 // reservation page ou il y a une liste pour les docteurs
 Route::get('/docteur-profil', [ReserveController::class, 'index']);
 
 // pages des reservation Medecin
 Route::get('/liste-des-reservations', [ReservationController::class, 'index'])->name('Mes-rendez-vous');
-<<<<<<< HEAD
 Route::put('/reservation/{id}/statut', [ReservationController::class, 'updateReservation'])->name('reservation_statut')->middleware(['auth']);
+
 // reserve page 
-Route::post('/recherche', [MedecinController::class, 'search'])->name('filtre');
+Route::get('/search', [MedecinController::class, 'search'])->name('search');
+
 
 Route::get('404', function(){
     return view('SoftVital\errorPage');
 });
-=======
-Route::put('/reservation/{id}/statut', [ReservationController::class, 'updateReservation'])->name('reservation_statut');
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340

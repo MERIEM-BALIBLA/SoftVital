@@ -1,13 +1,6 @@
 @extends('Layouts.app')
 @section('content')
-    <style>
-        #regForm {
-            background-color: #ffffff;
-            width: 70%;
-            min-width: 300px;
-        }
 
-<<<<<<< HEAD
 
 
     <style>
@@ -33,24 +26,6 @@
             background-color: #ffdddd;
         }
 
-=======
-        */
-
-        /* Style the input fields */
-        input {
-            padding: 10px;
-            width: 100%;
-            font-size: 17px;
-            font-family: Raleway;
-            border: 1px solid #aaaaaa;
-        }
-
-        /* Mark input boxes that gets an error on validation: */
-        input.invalid {
-            background-color: #ffdddd;
-        }
-
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
         /* Hide all steps by default: */
         .tab {
             display: none;
@@ -78,7 +53,6 @@
             background-color: #04AA6D;
         }
     </style>
-<<<<<<< HEAD
     <section class="relative w-full h-screen py-20">
         <img class="position-absolute bottom-0 end-0" src="https://cdn.easyfrontend.com/pictures/httpcodes/three.svg"
             alt="" />
@@ -88,20 +62,6 @@
 
                 <div class="w-full rounded-lg dark:border md:mt-0 xl:p-0 dark:bg-orange-400 dark:border-gray-700">
                     <div class=" space-y-4 md:space-y-6 flex flex-col justify-center">
-=======
-<section class="w-full bg-gray-200 h-screen">
-    <main class="w-full flex my-16 flex-col justify-center items-center md:w-1/2 md:mx-auto py-10">
-        {{-- <div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-        </div> --}}
-        {{-- <div class="md:w-1/2 flex flex-col justify-center"> --}}
-            <div class="md:w-2/3  w-full flex flex-col items-center justify-center text-center">
-
-                <div class="w-full rounded-lg dark:border md:mt-0 xl:p-0 dark:bg-orange-400 dark:border-gray-700">
-                    <div class="p-6 space-y-4 md:space-y-6 flex flex-col justify-center">
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                         <div class="md:w-2/3 md:mx-auto bg-white p-6 rounded-lg">
                             <h1
                                 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-xl dark:text-white">
@@ -141,12 +101,8 @@
                                 <div class="ml-3 text-sm sm:my-4 text-center">
 
                                     <a href="{{ route('forget_password') }}"
-<<<<<<< HEAD
                                         class="font-light text-gray-500 dark:text-gray-300">J'ai oublié le mot de
                                         passe</a>
-=======
-                                        class="font-light text-gray-500 dark:text-gray-300">J'ai oublié le mot de passe</a>
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                                     <hr class="w-1/2 mx-auto">
                                 </div>
                             </form>
@@ -178,11 +134,7 @@
                 </div>
 
             </div>
-<<<<<<< HEAD
             {{-- </div> --}}
-=======
-        {{-- </div> --}}
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
         </main>
 
     </section>
@@ -211,11 +163,7 @@
     <section id="register-popup" class="hidden">
         <div id="register-popup" tabindex="-1"
             class="bg-black/50 fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex">
-<<<<<<< HEAD
             <div class="w-2/3 bg-white border-4 rounded-lg shadow relative">
-=======
-            <div class="w-2/3 bg-white border-4 rounded-lg shadow relative m-10">
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 
                 <div class="flex items-start justify-between p-5 border-b rounded-t">
                     <h3 class="text-xl font-semibold">
@@ -446,7 +394,6 @@
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="brand" class="text-sm font-medium text-gray-900 block mb-2">Titre
                                     :</label>
-<<<<<<< HEAD
                                 {{-- <input
                                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                     placeholder="nom d'utilisation" type="text" name="nom"
@@ -456,23 +403,13 @@
                                     placeholder="nom d'utilisation" type="text" name="nom"
                                     oninput="this.className=''; validateInput(this);" id="nom">
 
-=======
-                                <input
-                                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
-                                    placeholder="nom d'utilisation" type="text" name="nom"
-                                    oninput="this.className = ''" id="nom">
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                             </div>
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="brand" class="text-sm font-medium text-gray-900 block mb-2">CIN
                                     :</label><input
                                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
-<<<<<<< HEAD
                                     placeholder="votre cin" type="text" name="cin" oninput="this.className = ''"
                                     id="cin">
-=======
-                                    placeholder="votre cin" type="text" name="cin" oninput="this.className = ''" id="cin">
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                             </div>
 
                         </div>
@@ -508,12 +445,8 @@
                                 <label for="brand" class="text-sm font-medium text-gray-900 block mb-2">Confirmer
                                     le mot de passe :</label><input
                                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
-<<<<<<< HEAD
                                     type="password" name="password_confirmation" oninput="this.className = ''"
                                     id="password">
-=======
-                                    type="password" name="password_confirmation" oninput="this.className = ''" id="password">
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                             </div>
                         </div>
 
@@ -553,10 +486,7 @@
                                     class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                                     type="text" name="adresse_cabinet" oninput="this.className = ''" id="adresse">
                             </div>
-<<<<<<< HEAD
                             {{-- <input type="hidden" name="image" value="src="{{asset('assets/image/calandreier.pnj')}}""> --}}
-=======
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                         </div>
 
 
@@ -607,7 +537,6 @@
     {{-- <script>
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
-<<<<<<< HEAD
 
         function showTab(n) {
             // This function will display the specified tab of the form ...
@@ -796,176 +725,4 @@
         }
     </script>
 
-=======
-
-        function showTab(n) {
-            // This function will display the specified tab of the form ...
-            var x = document.getElementsByClassName("tab");
-            x[n].style.display = "block";
-            // ... and fix the Previous/Next buttons:
-            if (n == 0) {
-                document.getElementById("prevBtn").style.display = "none";
-            } else {
-                document.getElementById("prevBtn").style.display = "inline";
-            }
-            if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Submit";
-            } else {
-                document.getElementById("nextBtn").innerHTML = "Next";
-            }
-            // ... and run a function that displays the correct step indicator:
-            fixStepIndicator(n)
-        }
-
-        function nextPrev(n) {
-            // This function will figure out which tab to display
-            var x = document.getElementsByClassName("tab");
-            // Exit the function if any field in the current tab is invalid:
-            if (n == 1 && !validateForm()) return false;
-            // Hide the current tab:
-            x[currentTab].style.display = "none";
-            // Increase or decrease the current tab by 1:
-            currentTab = currentTab + n;
-            // if you have reached the end of the form... :
-            if (currentTab >= x.length) {
-                //...the form gets submitted:
-                document.getElementById("regForm").submit();
-                return false;
-            }
-            // Otherwise, display the correct tab:
-            showTab(currentTab);
-        }
-
-        function validateForm() {
-            // This function deals with validation of the form fields
-            var x, y, i, valid = true;
-            x = document.getElementsByClassName("tab");
-            y = x[currentTab].getElementsByTagName("input");
-            // A loop that checks every input field in the current tab:
-            for (i = 0; i < y.length; i++) {
-                // If a field is empty...
-                if (y[i].value == "") {
-                    // add an "invalid" class to the field:
-                    y[i].className += " invalid";
-                    // and set the current valid status to false:
-                    valid = false;
-                }
-            }
-            // If the valid status is true, mark the step as finished and valid:
-            if (valid) {
-                document.getElementsByClassName("step")[currentTab].className += " finish";
-            }
-            return valid; // return the valid status
-        }
-
-        function fixStepIndicator(n) {
-            // This function removes the "active" class of all steps...
-            var i, x = document.getElementsByClassName("step");
-            for (i = 0; i < x.length; i++) {
-                x[i].className = x[i].className.replace(" active", "");
-            }
-            //... and adds the "active" class to the current step:
-            x[n].className += " active";
-        }
-    </script> --}}
-    <script>
-        var currentTab = 0; // Current tab is set to be the first tab (0)
-        showTab(currentTab); // Display the current tab
-
-        function showTab(n) {
-            // This function will display the specified tab of the form ...
-            var x = document.getElementsByClassName("tab");
-            x[n].style.display = "block";
-            // ... and fix the Previous/Next buttons:
-            if (n == 0) {
-                document.getElementById("prevBtn").style.display = "none";
-            } else {
-                document.getElementById("prevBtn").style.display = "inline";
-            }
-            if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Submit";
-                document.getElementById("nextBtn").setAttribute("onclick", "submitForm()");
-            } else {
-                document.getElementById("nextBtn").innerHTML = "Next";
-                document.getElementById("nextBtn").setAttribute("onclick", "nextPrev(1)");
-            }
-            // ... and run a function that displays the correct step indicator:
-            fixStepIndicator(n)
-        }
-
-        function nextPrev(n) {
-            // This function will figure out which tab to display
-            var x = document.getElementsByClassName("tab");
-            // Exit the function if any field in the current tab is invalid:
-            if (n == 1 && !validateForm()) return false;
-            // Hide the current tab:
-            x[currentTab].style.display = "none";
-            // Increase or decrease the current tab by 1:
-            currentTab = currentTab + n;
-            // if you have reached the end of the form... :
-            if (currentTab >= x.length) {
-                //...the form gets submitted:
-                document.getElementById("regForm").submit();
-                return false;
-            }
-            // Otherwise, display the correct tab:
-            showTab(currentTab);
-        }
-
-        function validateForm() {
-            // This function deals with validation of the form fields
-            var x, y, i, valid = true;
-            x = document.getElementsByClassName("tab");
-            y = x[currentTab].getElementsByTagName("input");
-            // A loop that checks every input field in the current tab:
-
-            // if (currentTab === 0) {
-            // // If it's the first tab, call validateNom
-            // valid = validation();
-            for (i = 0; i < y.length; i++) {
-                // If a field is empty...
-                if (y[i].value == "") {
-                    // add an "invalid" class to the field:
-                    y[i].className += " invalid";
-                    // and set the current valid status to false:
-                    valid = false;
-                }
-            // }
-        }
-
-            // If the valid status is true, mark the step as finished and valid:
-            if (valid) {
-                document.getElementsByClassName("step")[currentTab].className += " finish";
-            }
-            return valid; // return the valid status
-        }
-
-        function fixStepIndicator(n) {
-            // This function removes the "active" class of all steps...
-            var i, x = document.getElementsByClassName("step");
-            for (i = 0; i < x.length; i++) {
-                x[i].className = x[i].className.replace(" active", "");
-            }
-            //... and adds the "active" class to the current step:
-            x[n].className += " active";
-        }
-
-        function submitForm() {
-            // This function submits the form
-            document.getElementById("regForm").submit();
-        }
-
-        function validation(){
-            var nomInput = document.getElementById('nom');
-            var cinInput = document.getElementById('cin');
-            var emailInput = document.getElementById('email');
-            var passwordInput = document.getElementById('password');
-            var cabinetInput = document.getElementById('cabinet');
-            var numeroInput = document.getElementById('numero');
-            var nomInput = document.getElementById('adresse');
-        }
-
-        
-    </script>
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 @endsection

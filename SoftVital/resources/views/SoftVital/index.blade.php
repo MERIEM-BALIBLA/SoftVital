@@ -2,7 +2,6 @@
 
 @section('content')
     <style>
-<<<<<<< HEAD
         /*Start Animations*/
         @-webkit-keyframes animatetop {
             from {
@@ -10,19 +9,6 @@
                 opacity: 0;
             }
 
-=======
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
-
-        /*Start Animations*/
-        @-webkit-keyframes animatetop {
-            from {
-                top: -300px;
-                opacity: 0;
-            }
-
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
             to {
                 top: 0;
                 opacity: 1;
@@ -67,13 +53,8 @@
 
         /*End Animations*/
         /*
-<<<<<<< HEAD
-                                                -- Start BackGround Animation
-                                                */
-=======
-            -- Start BackGround Animation
-            */
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
+                                                    -- Start BackGround Animation
+                                                    */
         .area {
             /* background: #575edf; */
             /* dark:background-image:#575edf; */
@@ -192,7 +173,6 @@
             }
         }
 
-<<<<<<< HEAD
 
         /* slider */
         $bg-color: #222;
@@ -308,11 +288,6 @@
             }
         }
     </style>
-=======
-       
-    </style>
-    
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
     <div class="relative w-full mb-4 rounded-b-2xl area bg-indigo-500 dark:bg-orange-500">
         <ul class="circles">
             <li></li>
@@ -326,17 +301,17 @@
             <li></li>
             <li></li>
         </ul>
-<<<<<<< HEAD
         <div class="rounded-b-2xl pt-4 md:px-36 flex">
             <div class="w-full md:w-1/2 text-start px-20 relative py-28 z-20">
                 <h2 class="text-4xl text-white font-bold title-font mb-4">Vous êtes professionnel de santé ?</h2>
                 <p class="text-xl text-gray-300">Comme des milliers de médecins, rejoignez la plateforme santé n°1 en
                     Afrique.</p>
-
-                <div class="mt-10">
-                    <a href="/Authentification" class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded">Je
-                        m'inscris</a>
-                </div>
+                @if (!auth()->check())
+                    <div class="mt-10">
+                        <a href="/Authentification" class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded">Je
+                            m'inscris</a>
+                    </div>
+                @endif
             </div>
             <div class="w-1/2 md:block hidden">
                 <img class="w-full h-full" src="{{ asset('assets/images/docteur.png') }}" alt="">
@@ -487,156 +462,6 @@
                     <a href="#"
                         class="inline-block w-full text-center text-lg font-medium text-gray-100 bg-cyan-900 border-solid border-2 border-cyan-800 py-4 px-10 hover:bg-cyan-800 hover:text-white hover:shadow-md md:w-48">Je
                         m'inscris</a>
-=======
-        <div class=" py-40 px-10 rounded-b-2xl " {{-- style="opacity:3;" --}}>
-            <div class="text-start px-20 relative z-10 w-full">
-                {{-- <h2>Vous êtes professionnel de santé ?</h2> --}}
-                <h2 class="text-4xl text-black font-bold title-font mb-4">Vous êtes professionnel
-                    de santé ?
-                </h2>
-                <p class="text-xl text-gray-300">Comme des milliers de médecins, rejoignez la plateforme santé n°1 en Afrique.</p>
-
-                {{-- <div class="sm:w-2/3 my-auto mx-auto px-4">
-                    <form class=" ">
-                        <label for="default-search"
-                            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                        <div class="relative flex">
-                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                </svg>
-                            </div>
-                            <input type="search" id="default-search"
-                                class="block w-full p-4 ps-10 text-sm text-gray-900 border-r  border-gray-300 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Search Mockups, Logos..." />
-                            <input type="search" id="default-search"
-                                class="block w-full p-4 ps-10 text-sm text-gray-900 border-r  border-gray-300 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Search Mockups, Logos..." />
-                            <input type="search" id="default-search"
-                                class="block w-full p-4 ps-10 text-sm text-gray-900 border-r  border-gray-300 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Search Mockups, Logos..." />
-
-                            <button type="submit"
-                                class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-                        </div>
-                    </form>
-
-                </div> --}}
-            </div>
-        </div>
-
-
-    </div>
-
-    <div class="md:absolute flex md:flex-row flex-col justify-center gap-8 md:top-80 md:left-0 md:right-0 mx-auto">
-
-        <div
-            class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl  sm:max-w-sm sm:rounded-lg sm:px-10">
-            <span
-                class="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[10]"></span>
-            <div class="relative z-10 mx-auto max-w-md">
-                <span
-                    class="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-sky-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="h-10 w-10 text-white transition-all">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-                    </svg>
-                </span>
-                <div
-                    class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                    <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share
-                        online.</p>
-                </div>
-                <div class="pt-5 text-base font-semibold leading-7">
-                    <p>
-                        <a href="#" class="text-sky-500 transition-all duration-300 group-hover:text-white">Read the
-                            docs
-                            &rarr;
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div
-            class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:max-w-sm sm:rounded-lg sm:px-10">
-            <span
-                class="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[10]"></span>
-            <div class="relative z-10 mx-auto max-w-md">
-                <span
-                    class="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-sky-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="h-10 w-10 text-white transition-all">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-                    </svg>
-                </span>
-                <div
-                    class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                    <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share
-                        online.</p>
-                </div>
-                <div class="pt-5 text-base font-semibold leading-7">
-                    <p>
-                        <a href="#" class="text-sky-500 transition-all duration-300 group-hover:text-white">Read the
-                            docs
-                            &rarr;
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div
-            class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:max-w-sm sm:rounded-lg sm:px-10">
-            <span
-                class="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-300 group-hover:scale-[10]"></span>
-            <div class="relative z-10 mx-auto max-w-md">
-                <span
-                    class="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-300 group-hover:bg-sky-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="h-10 w-10 text-white transition-all">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-                    </svg>
-                </span>
-                <div
-                    class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
-                    <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share
-                        online.</p>
-                </div>
-                <div class="pt-5 text-base font-semibold leading-7">
-                    <p>
-                        <a href="#" class="text-sky-500 transition-all duration-300 group-hover:text-white">Read the
-                            docs
-                            &rarr;
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- </div> --}}
-    <section class="text-gray-600 body-font md:mt-56 dark:bg-gray-950">
-        <div class="container px-5 py-24 mx-auto">
-            <h2 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">SoftVital <br> au
-                service de votre santé</h2>
-            <div class=" sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-
-                <div class="flex md:flex-row mb-10 items-center">
-                    <div class="rounded-lg w-1/3 overflow-hidden">
-                        <img alt="content" class="object-cover object-center "
-                            src="{{ asset('assets/images/calender.png') }}">
-                    </div>
-                    <div class="">
-                        <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Planifiez un rendez-vous sans
-                            nécessité de déplacement.</h2>
-                        <button
-                            class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
-                    </div>
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                 </div>
             </div>
             <!-- Close Text Wrapper -->
@@ -662,37 +487,6 @@
             </div>
         </div>
     </div>
-
-    <section class="px-6 sm:px-10 md:px-24 lg:px-40 py-10">
-        <div class="rounded-xl"
-            style="background-image: url('{{ asset('assets/images/bg.jpg') }}');background-position: center; background-size: cover;">
-            <div class="relative flex flex-col md:flex-row py-10 md:px-60 justify-between items-center sm:gap-10 bg-blue-500 bg-opacity-25 hover:bg-orange-400 hover:shadow-lg transition-colors duration-300"
-                style="">
-
-                {{-- <h4 class="text-black font-bold text-3xl sm:text-4xl lg:text-5xl hover:text-white">SoftVital c'est...</h4> --}}
-                <div class="">
-                    <h1 id="typewriter" class="text-4xl font-medium text-gray-700 "></h1>
-                </div>
-                <div class="flex flex-col md:flex-row md:gap-32 mt-6 sm:mt-0">
-                    <div class="text-center">
-                        <span class="font-medium text-2xl sm:text-3xl lg:text-4xl text-blue-500">80 millions</span>
-                        <br>
-                        <span class="text-gray-500">de patients</span>
-                    </div>
-                    <div class="text-center">
-                        <span class="font-medium text-2xl sm:text-3xl lg:text-4xl text-indigo-800">900 000</span>
-                        <br>
-                        <span class="text-gray-500">utilisateurs professionnels</span>
-                    </div>
-                    <div class="text-center">
-                        <span class="font-medium text-2xl sm:text-3xl lg:text-4xl text-indigo-800">97%</span>
-                        <br>
-                        <span class="text-gray-500">evenements</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
@@ -743,7 +537,6 @@
 
 
 
-<<<<<<< HEAD
     <script src="{{ asset('assets/js/slider.js') }}"></script>
 
 
@@ -793,84 +586,4 @@
         @include('layouts.footer')
 
     </footer>
-=======
-        </div>
-    </section>
-
-
-
-    <div class="slideshow-container w-full">
-        <div>
-            @foreach ($posts as $post)
-                <div class="mySlides1 w-10/12 mx-auto">
-                    <div class="flex">
-                        <div class="flex bg-blue-500 p-4 rounded-lg">
-                            <div class="flex flex-col w-2/3 pr-4 bg">
-                                <p class="text-2xl font-black mb-2 text-gray-50">{{ $post->title }}</p>
-                                <p class="text-lg font-light leading-5 text-gray-300">{{ $post->description }}.</p>
-                                <p class="text-lg font-light leading-5 text-gray-300 mt-6">{{ $post->user->nom }}</p>
-                                {{-- <p>{{ $post->user->medecin->specialite->specialite }}</p> --}}
-
-                                <div class="flex h-full items-end text-gray-300 hover:text-gray-50">
-                                    <button class="text-sm font-semibold flex items-center space-x-2">
-                                        <span>BOOK NOW</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="w-1/3">
-                                <img class="w-full hover:animate-bounce rounded-lg"
-                                    src="{{ asset('storage/' . $post->image) }}" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-    </div>
-
-
-
-    <script src="{{ asset('assets/js/slider.js') }}"></script>
-
-    
-    
-    <script>
-    const words = ["SoftVital", "presente"]
-    let i = 0;
-    let j = 0;
-    let currentWord = "";
-    let isDeleting = false;
-    
-    function type() {
-      currentWord = words[i];
-      if (isDeleting) {
-        document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
-        j--;
-        if (j == 0) {
-          isDeleting = false;
-          i++;
-          if (i == words.length) {
-            i = 0;
-          }
-        }
-      } else {
-        document.getElementById("typewriter").textContent = currentWord.substring(0, j+1);
-        j++;
-        if (j == currentWord.length) {
-          isDeleting = true;
-        }
-      }
-      setTimeout(type, 300);
-    }
-    
-    type();
-    </script>
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
 @endsection

@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 
 class AuthRepository implements AuthInterfaceRepository
 {
@@ -58,10 +60,7 @@ class AuthRepository implements AuthInterfaceRepository
                     'specialite_id' => $specialite,
                     'cabinet' => $request->input('cabinet'),
                     'adresse_cabinet' => $request->input('adresse_cabinet'),
-<<<<<<< HEAD
                     // 'image' => $request->input('image'),
-=======
->>>>>>> ab0b16a8d40deba901b275864c75f50097109340
                 ];
                 // Créer un médecin
                 Medecin::create($medecinData);
@@ -121,13 +120,16 @@ class AuthRepository implements AuthInterfaceRepository
             'email' => 'required|email',
             'password' => 'required',
         ]);
-    
+
         $credentials = $request->only('email', 'password');
-    
+
         if (auth()->attempt($credentials)) {
             // Utilisateur authentifié
             $user = auth()->user();
-    
+            if ($user->role->first()->role === 'admin') {
+                $url = URL::to('/dashboard');
+                return Redirect::to($url);
+            }
             if ($user->role->first()->role === 'medecin') {
                 // Vérifier si l'utilisateur est un médecin
                 $medecin = Medecin::where('user_id', $user->id)->first();
@@ -145,14 +147,13 @@ class AuthRepository implements AuthInterfaceRepository
                 $request->session()->regenerate();
                 return redirect()->route('/');
             }
+
+
         }
-    
+
         // Si l'authentification échoue, rediriger vers la page de connexion avec un message d'erreur
         return back()->withInput()->withErrors(['email' => 'Email ou mot de passe incorrect']);
     }
-    
-
-
     // end login
 
     public function getUserByEmail($email)

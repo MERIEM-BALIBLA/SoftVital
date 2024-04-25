@@ -19,7 +19,7 @@ class ReservationRepository implements ReservationInterfaceRepository
 
             ->select('users.nom as nom', 'users.email as email', 'events.start as debut', 'events.end as fin', 'events.status as statut', 'rendez-vous.*')
 
-            ->get();
+            ->paginate(8);
         return view("medecin.reservation.index", compact('reservations'));
     }
     public function updateRes(Request $request, $id)

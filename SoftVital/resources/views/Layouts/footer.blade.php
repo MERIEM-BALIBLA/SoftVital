@@ -1,4 +1,4 @@
-<footer class="relative  pt-8 pb-6 bg-indigo-600 text-white">
+<footer class="pt-8 pb-6 bg-indigo-600 text-white sticky bottom-0">
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap text-left lg:text-left">
       <div class="w-full lg:w-6/12 px-4">

@@ -187,7 +187,6 @@ class AuthRepository implements AuthInterfaceRepository
         });
     }
 
-
     public function resetPassword($email, $password)
     {
         $user = $this->getUserByEmail($email);

@@ -6,7 +6,7 @@
                 <div class="sm:flex items-center bg-white overflow-hidden px-2 py-1 md:justify-between rounded-full">
                     <div class="ms:flex items-center px-2 rounded-lg space-x-2 md:space-x-4 mx-auto ">
                         <select id="ville" class="text-sm text-gray-700 outline-none border-2 px-2 py-2 rounded-md">
-                            <option selected>Vile</option>
+                            <option selected value="0">Vile</option>
                             @foreach ($villes as $ville)
                                 <option value="{{ $ville->id }}">{{ $ville->nom }}</option>
                             @endforeach

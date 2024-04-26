@@ -200,8 +200,8 @@
                 </svg>
                 <span class="sr-only">Close popup</span>
             </button>
-            <h2 class="text-lg font-bold mb-4">Comments</h2>
-            <div class="flex flex-col space-y-4">
+            {{-- <h2 class="text-lg font-bold mb-4">Comments</h2> --}}
+            {{-- <div class="flex flex-col space-y-4">
 
                 <div class="bg-white p-2 rounded-md">
                     <h3 class="text-base font-bold">Jane Smith</h3>
@@ -228,7 +228,7 @@
                         Submit
                     </button>
                 </form>
-            </div>
+            </div> --}}
             {{-- </div> --}}
         </div>
     </div>
@@ -236,7 +236,7 @@
     {{-- --------------- --}}
 
     {{-- popup --}}
-    @if (auth()->check())
+    {{-- @if (auth()->check()) --}}
         <div id="popup" tabindex="-1"
             class="hidden bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex">
             <div class="relative p-4 w-full max-w-md h-full md:h-auto">
@@ -285,7 +285,7 @@
                 </div>
             </div>
         </div>
-    @endif
+    {{-- @endif --}}
     {{-- end popup --}}
 
     <script>

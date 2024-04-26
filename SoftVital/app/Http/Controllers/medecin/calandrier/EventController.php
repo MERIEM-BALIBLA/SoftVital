@@ -10,9 +10,6 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function __construct(CalandrierInterfaceRepository $calandrierRepository)
     {
         $this->calandrierRepository = $calandrierRepository;

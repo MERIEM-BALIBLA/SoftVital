@@ -28,10 +28,10 @@ class ReservationRepository implements ReservationInterfaceRepository
         // dd($request);
 
         $request->validate([
-            'statut' => 'required|in:accepter,refuser,en atente', 
+            'statut' => 'required|in:accepter,refuser,en atente',
         ]);
 
-        $reservation->reservation = $request->statut; 
+        $reservation->reservation = $request->statut;
         $reservation->save();
 
         if ($request->statut === 'accepter') {
@@ -42,7 +42,7 @@ class ReservationRepository implements ReservationInterfaceRepository
             }
         }
         if ($request->statut === 'en atente' || $request->statut === 'refuser') {
-            $event = $reservation->event; 
+            $event = $reservation->event;
             if ($event) {
                 $event->status = 'active';
                 $event->save();

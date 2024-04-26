@@ -4,10 +4,10 @@ use App\Http\Controllers\admin\compteController;
 use App\Http\Controllers\Authentification\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\medecin\calandrier\EventController;
-// use App\Http\Controllers\medecin\calandrier\ListeController;
 use App\Http\Controllers\medecin\post\PostController;
 use App\Http\Controllers\medecin\profil\ProfileController;
 use App\Http\Controllers\medecin\MedecinController;
+use App\Http\Controllers\medecin\RechercheController;
 use App\Http\Controllers\medecin\reservation\ReservationController;
 use App\Http\Controllers\medecin\singlePage\SinglePageController;
 use App\Http\Controllers\admin\specialite\SpecialiteController;
@@ -112,8 +112,7 @@ Route::put('event-edit', [EventController::class, 'updateevent'])->name('mycalen
 
 // admin----------------------------------------------
 Route::get('/dashboard', [compteController::class, 'index'])->middleware(['auth', 'admin']);
-// Route::get('/liste_des_rendez-vous', [ListeController::class, 'index'])->middleware(['auth']);
-Route::put('/medecin/{id}/edit', [compteController::class, 'edit'])->name('medecin.edit');
+Route::put('/medecin/{id}/edit', [compteController::class, 'changeStatut'])->name('medecin.edit');
 // compte active 
 Route::get('/liste_des_comptes_actives', [compteController::class, 'compteActive'])->middleware(['auth', 'admin']);
 // compte inactive
@@ -151,10 +150,14 @@ Route::get('/docteur-profil', [ReserveController::class, 'index']);
 Route::get('/liste-des-reservations', [ReservationController::class, 'index'])->name('Mes-rendez-vous');
 Route::put('/reservation/{id}/statut', [ReservationController::class, 'updateReservation'])->name('reservation_statut')->middleware(['auth']);
 
-// reserve page 
-Route::get('/search', [MedecinController::class, 'search'])->name('search');
+// page de recherche
+Route::get('/search', [RechercheController::class, 'search'])->name('search');
 
-
+// page 404
 Route::get('404', function(){
     return view('SoftVital\errorPage');
 });
+
+// Route::get('/confirmation', function () {
+//     return view('Authentification.confirmation');
+// })->name('confirmation');

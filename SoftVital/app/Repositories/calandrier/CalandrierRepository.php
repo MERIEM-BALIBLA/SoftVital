@@ -16,10 +16,7 @@ class CalandrierRepository implements CalandrierInterfaceRepository
         $user = Auth::user();
         return Event::where('user_id', $user->id)
             ->where('type', 'evenement')
-        ->get();
-        // return Event::where('user_id', $user->id)
-        //     ->where('type', 'evenement')
-        //     ->paginate(8);
+            ->get();
     }
 
     public function getHoraire()
@@ -33,9 +30,9 @@ class CalandrierRepository implements CalandrierInterfaceRepository
 
     public function divideTime($totalHours, $division)
     {
-        $totalMinutes = $totalHours * 60; // Convertir les heures en minutes
+        // conversion h->min
+        $totalMinutes = $totalHours * 60;
 
-        // Déterminer la taille de l'intervalle en fonction de la division saisie
         switch ($division) {
             case '15min':
                 $interval = 15;
@@ -50,7 +47,6 @@ class CalandrierRepository implements CalandrierInterfaceRepository
             //     $interval = 40;
             //     break;
             default:
-                // Valeur par défaut si la division n'est pas reconnue
                 $interval = 30; // Utilisation d'une valeur par défaut de 30 minutes
         }
         $result = [];
@@ -68,56 +64,63 @@ class CalandrierRepository implements CalandrierInterfaceRepository
 
     public function createEvent(Request $request)
     {
-        // public function createEvent(Request $request){
         $user = auth()->user();
-
         $validatedData = $request->validate(
             [
                 'title' => 'required|max:30|min:5',
             ],
             [
-                // 'title.required' => 'Le titre est requis.',
                 'title.min' => 'Le titre doit contient au minimun 5 caractères.',
-
                 'title.max' => 'Le titre ne peut pas dépasser 30 caractères.',
-                // Autres messages d'erreur personnalisés ici
             ]
         );
 
-        // $title = $request->input("title");
         $title = $validatedData['title'];
-
         $range = $request->input("rangepick");
         $type = $request->input("type");
         $division = $request->input("division");
-        // dd($request);
 
         $dates = explode(' - ', $range);
         $start_datetime = Carbon::parse($dates[0]);
         $end_datetime = Carbon::parse($dates[1]);
         if ($start_datetime->isToday() || $start_datetime->isFuture()) {
             if ($division) {
-                // Diviser la durée de l'événement en tranches plus petites en utilisant la fonction divideTime
                 $durationInHours = $start_datetime->diffInHours($end_datetime);
                 $dividedTime = $this->divideTime($durationInHours, $division);
             } else {
-                // Si aucune division n'a été sélectionnée, traiter l'événement comme une unité
                 $dividedTime = [$start_datetime->diffInMinutes($end_datetime)];
             }
-            // Enregistrer chaque tranche de temps comme un événement séparé
+
             $events = [];
             $currentDateTime = $start_datetime;
             foreach ($dividedTime as $time) {
                 $event = new Event();
                 $event->title = $title;
                 $event->start = $currentDateTime;
-                $currentDateTime = $currentDateTime->copy()->addMinutes($time); // Ajouter la durée de la tranche
+                $currentDateTime = $currentDateTime->copy()->addMinutes($time);
                 $event->end = $currentDateTime;
                 $event->type = $type;
-                $event->user_id = $user->id; // Définir la valeur de 'user_id'
+                $event->user_id = $user->id;
+                // n'ajoute pas event avec nom deja existe
+                // $event->save();
+                // $events[] = $event;
+                // if ($event->type === 'evenement' && $event->title) {
+                //     $existingEvent = Event::where('title', $event->title)->first();
 
-                $event->save();
-                $events[] = $event;
+                //     if (!$existingEvent) {
+                //         $event->save();
+                //         $events[] = $event;
+                //     }
+                // }
+                // n'ajoute pas un event avec une duree existe
+                // $overlappingEvents = Event::where('start', '<', $event->end)
+                //     ->where('end', '>', $event->start)
+                //     ->get();
+
+                // if ($overlappingEvents->isEmpty()) {
+                //     $event->save();
+                //     $events[] = $event;
+                // }
             }
         } else {
             throw new \Exception('La date de début de l\'événement est antérieure à aujourd\'hui. Veuillez choisir une date de début valide.');

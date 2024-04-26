@@ -15,11 +15,9 @@ class MedecinMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // return $next($request);
         if (!auth()->user()->hasRole('medecin')) {
-            abort(403, 'Unauthorized action.');
+            abort(redirect('404'));
         }
-
         return $next($request);
     }
 }

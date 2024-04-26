@@ -120,6 +120,23 @@
             </div>
         @endforeach
     @else
-        <p class="text-center p-4">No result</p>
+        <div class="w-full items-center py-24">
+            <div
+                class="w-3/5 bg-red-200 rounded-lg shadow-sm p-5 border-dashed border border-red-200 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+                <div class="flex flex-col sm:flex-row justify-start items-center gap-4">
+                    <div class="bg-red-200 flex p-2 rounded-md"><svg xmlns="http://www.w3.org/2000/svg" width="3em"
+                            height="3em" viewBox="0 0 24 24">
+                            <path fill="red"
+                                d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" />
+                        </svg></div>
+                    <div class="text-start sm:text-left"">
+                        <h1 class="font-bold tracking-wider text-red-400"">Pas de résultat</h1>
+                        <p class="font-semibold text-red-300"">Pardon, mais le médecin que vous recherchez n'est pas
+                            répertorié
+                            sur notre plateforme. Essayer avec un autre</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     @endunless
 </div>
